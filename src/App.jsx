@@ -1,10 +1,11 @@
 import React from 'react'
 import Home from './Home'
+import Register from './pages/Register'
 
 function App() {
   return (
-    <>
-     <Home/> 
+    <> 
+      <Register/>
     </>
   )
 }
