@@ -1,11 +1,17 @@
 import React from 'react'
+import Navbar from './components/Navbar'
 
 function Home() {
   return (
-    <div>
-      <h1 className='text-center text-gray-600'>This is Home page of our website</h1>
-    </div>
-  )
+    <>
+      {/* <Navbar /> */}
+      <div className="p-8 text-center">
+        <h1 className="text-2xl font-bold">Welcome to the Home Page</h1>
+       
+      </div>
+    </>
+  );
 }
+
 
 export default Home
