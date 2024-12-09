@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Image from './../assets/Exams-bro.png';
 import { IoCloseSharp } from "react-icons/io5";
 
-function Register() {
+function Register({onClose}) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -26,6 +26,7 @@ function Register() {
   // Close form or handle close action
   const handleClose = () => {
     console.log("Form closed");
+    onClose();
   };
 
   return (

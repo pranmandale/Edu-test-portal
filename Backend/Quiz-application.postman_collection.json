@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "0606776e-c603-436f-90ed-8064961f0f91",
+		"name": "Quiz-application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27325959"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\":\"two\",\r\n    \"email\":\"two@gmail.com\",\r\n    \"username\":\"two2\",\r\n    \"password\":\"12345\"\r\n}\r\n\r\n// {\r\n//     \"fullName\":\"one\",\r\n//     \"email\":\"one@gmail.com\",\r\n//     \"username\":\"one1\",\r\n//     \"password\":\"12345\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/users/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"one1\",\r\n    \"password\":\"12345\"\r\n}\r\n//   {\r\n//     \"username\":\"two2\",\r\n//     \"password\":\"12345\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "current-user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server}}/users/current-user"
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"12345678\",\r\n    \"newPassword\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/users/change-password"
+					},
+					"response": []
+				},
+				{
+					"name": "update-account",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\":\"no one\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/users/update-account"
+					},
+					"response": []
+				},
+				{
+					"name": "refresh-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{server}}/users/refresh-token"
+					},
+					"response": []
+				},
+				{
+					"name": "quiz-history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server}}/users/quiz-history"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{server}}/users/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "quiz",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"JavaScript Basics\",\r\n    \"description\": \"Test your JavaScript knowledge\",\r\n    \"timeLimit\": 30,\r\n    \"questions\": [\r\n        {\r\n            \"questionText\": \"What is JavaScript?\",\r\n            \"options\": [\r\n                \"A programming language\",\r\n                \"A markup language\",\r\n                \"A styling language\",\r\n                \"A database\"\r\n            ],\r\n            \"correctAnswerIndex\": 0,\r\n            \"explanation\": \"JavaScript is a programming language\"\r\n        },\r\n        {\r\n            \"questionText\": \"What does DOM stand for?\",\r\n            \"options\": [\r\n                \"Document Object Model\",\r\n                \"Data Object Model\",\r\n                \"Document Oriented Model\",\r\n                \"Data Oriented Model\"\r\n            ],\r\n            \"correctAnswerIndex\": 0,\r\n            \"explanation\": \"DOM stands for Document Object Model\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/quizzes/create"
+					},
+					"response": []
+				},
+				{
+					"name": "submit-quiz",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"userId\": \"67335cea5bc6e80ad470b815\", \r\n    \"answers\": [\r\n        {\r\n            \"questionId\": \"6739868fa6a9e12773db176d\", \r\n            \"selectedOptionIndex\": 0\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/quizzes/67397df0339bee7b9892c554/attempt"
+					},
+					"response": []
+				},
+				{
+					"name": "my-quizzes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server}}/quizzes/my-quizzes"
+					},
+					"response": []
+				},
+				{
+					"name": "get-quizbyid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server}}/quizzes/67397df0339bee7b9892c554"
+					},
+					"response": []
+				},
+				{
+					"name": "update-quiz",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"title\": \"Updated JavaScript Basics\",\r\n    \"description\": \"Updated description\",\r\n    \"timeLimit\": 45, \r\n    \"questions\": [ \r\n        { \r\n        \"questionText\": \"What is JavaScript?\", \r\n        \"options\": [ \"A programming language\", \"A markup language\", \"A styling language\", \"A database\" ],\r\n         \"correctAnswerIndex\": 0, \r\n         \"explanation\": \"JavaScript is a programming language\"\r\n        } \r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/quizzes/67397df0339bee7b9892c554/update"
+					},
+					"response": []
+				},
+				{
+					"name": "get-leaderboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server}}/quizzes/67397df0339bee7b9892c554/leaderboard"
+					},
+					"response": []
+				},
+				{
+					"name": "get-attempts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server}}/quizzes/user/attempts"
+					},
+					"response": []
+				},
+				{
+					"name": "delete-quiz",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{server}}/quizzes/67388d6a4a265bbab5ca6e1e/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "result",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{server}}/quizzes/attempt/673c3505ced8bfd16e35c036/results"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

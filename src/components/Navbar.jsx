@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHome, FaInfoCircle, FaQuestionCircle, FaPhone, FaSignInAlt } from 'react-icons/fa';
 import Login from '../pages/Login'; // Import Login
+
 
 function Navbar() {
   const [showLogin, setShowLogin] = useState(false); // State for login visibility
