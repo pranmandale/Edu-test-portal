@@ -5,11 +5,7 @@ import Login from '../pages/Login'; // Import Login
 
 
 function Navbar({onOpenAuthModel}) {
-  // const [showLogin, setShowLogin] = useState(false); // State for login visibility
-
-  // const toggleLogin = () => {
-  //   setShowLogin(!showLogin);
-  // };
+  
 
   return (
     <>
@@ -41,8 +37,7 @@ function Navbar({onOpenAuthModel}) {
 
         {/* Login Button */}
         <button
-          // onClick={toggleLogin}
-          // onClick={onOpenAuthModel}
+          
           onClick={() => onOpenAuthModel()} // Open login form directly
           className="flex items-center px-4 py-2 ml-4 space-x-2 text-white bg-blue-600 rounded-md hover:bg-blue-700"
         >
@@ -51,14 +46,7 @@ function Navbar({onOpenAuthModel}) {
         </button>
       </div>
 
-      {/* Render Login Modal */}
-      {/* {showLogin && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative">
-            <Login onClose={toggleLogin} /> 
-          </div>
-        </div>
-      )} */}
+      
     </>
   );
 }
