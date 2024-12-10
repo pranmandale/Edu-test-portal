@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Image from './../assets/Exams-bro.png';
 import { IoCloseSharp } from "react-icons/io5";
 
-function Register({onClose}) {
+function Register({onClose, onLoginClick}) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -183,7 +183,8 @@ function Register({onClose}) {
               <div className="p-5 mb-3 text-center">
                 <p className="text-base text-gray-700">
                   Already have an account?{' '}
-                  <span className="font-semibold text-blue-500 cursor-pointer hover:underline">
+                  <span className="font-semibold text-blue-500 cursor-pointer hover:underline"  onClick={onLoginClick}>
+                 
                     Login
                   </span>
                 </p>

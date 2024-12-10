@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Image from './../assets/Exams-bro.png';
 import { IoCloseSharp } from "react-icons/io5";
 
-function Login({ onClose }) { // Accept onClose as a prop
+function Login({ onClose, onSignupClick }) { // Accept onClose as a prop
   const [showPassword, setShowPassword] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -17,12 +17,7 @@ function Login({ onClose }) { // Accept onClose as a prop
     setShowPassword((prevState) => !prevState);
   };
 
-  // Close form handler
-  const handleClose = () => {
-    if (onClose) {
-      onClose(); // Call the onClose function from props
-    }
-  };
+  
 
   return (
     <div className="flex items-center justify-center h-screen">
@@ -55,7 +50,7 @@ function Login({ onClose }) { // Accept onClose as a prop
           >
             {/* Close Button */}
             <IoCloseSharp
-              onClick={handleClose}
+              onClick={onClose}
               className="absolute p-2 text-3xl text-gray-700 transition-all duration-300 ease-in-out transform bg-blue-200 rounded-full shadow-md cursor-pointer right-4 top-4 hover:scale-110 hover:bg-blue-100"
             />
 
@@ -68,7 +63,7 @@ function Login({ onClose }) { // Accept onClose as a prop
               <div>
                 <label
                   htmlFor="email"
-                  className=" mb-1 text-base font-semibold text-gray-700"
+                  className="mb-1 text-base font-semibold text-gray-700 "
                 >
                   Email Address
                 </label>
@@ -87,7 +82,7 @@ function Login({ onClose }) { // Accept onClose as a prop
               <div>
                 <label
                   htmlFor="password"
-                  className=" mb-1 text-base font-semibold text-gray-700"
+                  className="mb-1 text-base font-semibold text-gray-700 "
                 >
                   Password
                 </label>
@@ -114,7 +109,7 @@ function Login({ onClose }) { // Accept onClose as a prop
 
             {/* Submit Button and Forget Password */}
             <div>
-              <p className="text-blue-500 cursor-pointer hover:underline text-right p-2 ">
+              <p className="p-2 text-right text-blue-500 cursor-pointer hover:underline ">
                 Forget Password?
               </p>
               <button
@@ -130,7 +125,8 @@ function Login({ onClose }) { // Accept onClose as a prop
             <div className="p-5 mb-3 text-center">
               <p className="text-base text-gray-700">
                 Don't have an account?{' '}
-                <span className="font-semibold text-blue-500 cursor-pointer hover:underline">
+                <span className="font-semibold text-blue-500 cursor-pointer hover:underline" onClick = {onSignupClick}>
+                
                   Sign Up
                 </span>
               </p>

@@ -4,16 +4,16 @@ import { FaHome, FaInfoCircle, FaQuestionCircle, FaPhone, FaSignInAlt } from 're
 import Login from '../pages/Login'; // Import Login
 
 
-function Navbar() {
-  const [showLogin, setShowLogin] = useState(false); // State for login visibility
+function Navbar({onOpenAuthModel}) {
+  // const [showLogin, setShowLogin] = useState(false); // State for login visibility
 
-  const toggleLogin = () => {
-    setShowLogin(!showLogin);
-  };
+  // const toggleLogin = () => {
+  //   setShowLogin(!showLogin);
+  // };
 
   return (
     <>
-      <div className="flex items-center justify-between bg-gray-100 p-4 shadow-md">
+      <div className="flex items-center justify-between p-4 bg-gray-100 shadow-md">
         {/* Logo */}
         <div className="text-xl font-bold text-blue-600">
           <p>MyLogo</p>
@@ -41,8 +41,10 @@ function Navbar() {
 
         {/* Login Button */}
         <button
-          onClick={toggleLogin}
-          className="ml-4 flex items-center space-x-2 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+          // onClick={toggleLogin}
+          // onClick={onOpenAuthModel}
+          onClick={() => onOpenAuthModel()} // Open login form directly
+          className="flex items-center px-4 py-2 ml-4 space-x-2 text-white bg-blue-600 rounded-md hover:bg-blue-700"
         >
           <FaSignInAlt className="text-lg" />
           <span>Login</span>
@@ -50,13 +52,13 @@ function Navbar() {
       </div>
 
       {/* Render Login Modal */}
-      {showLogin && (
+      {/* {showLogin && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="relative">
-            <Login onClose={toggleLogin} /> {/* Pass the toggle function */}
+            <Login onClose={toggleLogin} /> 
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 }
