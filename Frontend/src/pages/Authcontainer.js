@@ -20,7 +20,7 @@ function AuthContainer() {
   return (
     <div className="relative">
       {/* Show Login or Register form based on state */}
-      {showLogin && !showRegister && <Login onClose={() => setShowLogin(false)} toggleForm={toggleForm} />}
+      {showLogin && !showRegister && <Login onClose={() => setShowLogin(false)} toggleForm={toggleForm}  />}
       {showRegister && <Register onClose={() => setShowRegister(false)} />}
     </div>
   );
