@@ -1,35 +1,8 @@
-// import React, {useState} from 'react'
-// import Navbar from './components/Navbar'
-// import Hero from './components/Hero'
-// import AuthModel from './context/AuthModel';
-
-// function Home() {
-//   const [showAuthModel, setShowAuthModel] = useState(false);
-//   const handleOpenAuthModel = () => {
-//     setShowAuthModel(true);
-//   };
-
-//   const handleCloseAuthModel = () => {
-//     setShowAuthModel(false);
-//   };
-//   return (
-//     <>
-    
-//     </div>
-//   );
-// }
-
-
-// export default Home
-
-
-
 
 import React, {useState} from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import AuthModel from './context/AuthModel';
-import Forgot_password from './pages/Forgot_password';
 import Work from './components/work';
 
 const Home = () => {
