@@ -6,29 +6,20 @@ import AuthModel from './context/AuthModel';
 import Forgot_password from './pages/Forgot_password';
 
 function App() {
-  const [showAuthModel, setShowAuthModel] = useState(false);
-
-  const [forgot, setForgot] = useState(true);
-
-  const handleOpenAuthModel = () => {
-    setShowAuthModel(true);
-  };
-
-  const handleCloseAuthModel = () => {
-    setShowAuthModel(false);
-  };
+  
+  
 
   return (
     <Router>
       <div>
-        {/* <Navbar onOpenAuthModel={handleOpenAuthModel} /> */}
+        
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="*" element={<Home />} /> {/* Catch-all route */}
-          <Route path='/forgot-password' element={<Forgot_password onClose={() => {setForgot(false)}}/>} />
+          <Route path="*" element={<Home />} /> 
+          {/* <Route path='/forgot-password' element={<Forgot_password onClose={() => {setForgot(false)}}/>} /> */}
+          <Route path='/forgot-password' element={ <Forgot_password/>} />
         </Routes>
-        {/* Render AuthModel outside of Routes */}
-        {/* {showAuthModel && <AuthModel onClose={handleCloseAuthModel} />} */}
+        
       </div>
     </Router>
   );
@@ -37,4 +28,4 @@ function App() {
 export default App;
 
 
-// @D3z9$Pq!
+
